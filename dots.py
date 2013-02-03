@@ -1,6 +1,8 @@
 # W oparciu o skrypt Edgardo z physicsforums.com
 # Based on Edgardo script from physicsforums.com
 
+import time
+
 class Matrix:
         def __init__(self, n):
                 self.matrix = []
@@ -141,4 +143,7 @@ for n in range(4,6):
     print "Dla macierzy %i na %i"%(n,n)
     print ""
     for i in range(1,11):
-        print "Liczba scierzek o dlugosci %i wynosi: %i"%(i, numberOfPaths(i,n))
+        ts = time.time()
+        number = numberOfPaths(i,n)
+        te = time.time()
+        print "Liczba scierzek o dlugosci %i wynosi: %i (%2.2f sek)"%(i,number, (te-ts))
